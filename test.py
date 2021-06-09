@@ -75,7 +75,7 @@ class TestScript(unittest.TestCase):
             "WeightKg": 96
         }]
         result = script.add_bmi_data(data)
-        self.assertIn('Very High Risk', result['data'][0]['Health_Risk'])
+        self.assertEqual('Very High Risk', result['data'][0]['Health_Risk'])
 
     def test_corresponding_bmi_category(self):
         '''
@@ -87,7 +87,8 @@ class TestScript(unittest.TestCase):
             "WeightKg": 96
         }]
         result = script.add_bmi_data(data)
-        self.assertIn('Very Severely Obese', result['data'][0]['BMI_Category'])
+        self.assertEqual('Very Severely Obese',
+                         result['data'][0]['BMI_Category'])
 
 
 if __name__ == '__main__':
