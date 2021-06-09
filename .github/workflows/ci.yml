@@ -1,0 +1,13 @@
+name: CI
+
+on: push
+
+jobs:
+  bmi-test-action:
+    name: BMI script test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Backend Test
+        run: python3 test.py
